@@ -6,7 +6,10 @@ import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.Intent
+import android.util.Log
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import com.capstone.mobileapp_capstone.databinding.ActivityProfileBinding
 import android.widget.Toast
 
@@ -59,7 +62,28 @@ class Profile : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun pairedDeviceList() {
-        //TODO("Not yet implemented")
+        m_pairedDevices = m_bluetoothAdapter!!.bondedDevices
+        val list : ArrayList<BluetoothDevice> = ArrayList()
+
+        if (!m_pairedDevices.isEmpty()) {
+            for (device: BluetoothDevice in m_pairedDevices) {
+                list.add(device)
+                Log.i("device", ""+device)
+            }
+        } else {
+            Toast.makeText(baseContext,("no paired bluetooth devices found"),Toast.LENGTH_SHORT).show()
+        }
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
+        binding.deviceList.adapter = adapter
+        binding.deviceList.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+            val device: BluetoothDevice = list[position]
+            val address: String = device.address
+
+            val intent = Intent(this, SensorHistory::class.java)
+            intent.putExtra(EXTRA_ADDRESS, address)
+            startActivity(intent)
+        }
     }
 
     private fun editProfile() {
