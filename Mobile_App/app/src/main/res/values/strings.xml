@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MobileApp_Capstone</string>
+    <string name="sign_in">Sign In</string>
+    <string name="signed_in">Signed In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="create_account">Create Account</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="verify_email">Verify</string>
+    <string name="firebase_status_fmt">Firebase UID: %s</string>
+    <string name="login_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="login_title_text">Login</string>
+    <string name="reload">Reload</string>
+</resources>

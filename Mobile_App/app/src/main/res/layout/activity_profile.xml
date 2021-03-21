@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/pPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="19dp"
+        tools:srcCompat="@tools:sample/avatars" />
+    <Button
+        android:id="@+id/docLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/userInfoBox"
+        android:layout_below="@id/pPicture"
+        android:text="Doctor Info" />
+
+    <Button
+        android:id="@+id/editProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/userInfoBox"
+        android:layout_below="@id/docLink"
+        android:text="Edit Profile" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/userInfoBox"
+        android:layout_below="@id/editProfile"
+        android:text="Settings" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_toRightOf="@id/pPicture"
+        android:id="@+id/userInfoBox"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="4dp">
+
+        <TextView
+            android:id="@+id/headingProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/userInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Information" />
+
+        <TextView
+            android:id="@+id/userHealthConcerns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Health Concerns" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titleDList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below ="@+id/userInfoBox"
+        android:text="Device List"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
+    <Button
+        android:id="@+id/addDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:text="Add Device"
+        />
+
+    <LinearLayout
+        android:id="@+id/deviceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleDList"
+        android:layout_above="@+id/addDevice"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+
+        <ListView
+            android:id="@+id/deviceList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </ListView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

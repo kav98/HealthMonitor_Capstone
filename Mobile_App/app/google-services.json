@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "938023110579",
+    "project_id": "healthactivitymss-capstone",
+    "storage_bucket": "healthactivitymss-capstone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938023110579:android:864d35777e1430482a2dc6",
+        "android_client_info": {
+          "package_name": "com.capstone.mobileapp_capstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938023110579-h7bt3mb4shpk8260bgi70bj4td85cqts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB32gX8klyr44uxFl1dUWtFApmwbN_XMYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938023110579-h7bt3mb4shpk8260bgi70bj4td85cqts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
