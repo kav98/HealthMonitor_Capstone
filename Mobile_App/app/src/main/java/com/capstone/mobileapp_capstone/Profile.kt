@@ -6,10 +6,11 @@ import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.Intent
+import android.view.View
 import com.capstone.mobileapp_capstone.databinding.ActivityProfileBinding
 import android.widget.Toast
 
-class Profile : AppCompatActivity() {
+class Profile : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityProfileBinding
     private var m_bluetoothAdapter : BluetoothAdapter? = null
@@ -26,11 +27,15 @@ class Profile : AppCompatActivity() {
         setContentView(binding.root)
 
         //init buttons and clickables
-        binding.
+        binding.docLink.setOnClickListener(this)
+        binding.editProfile.setOnClickListener(this)
+
+        binding.addDevice.setOnClickListener(this)
 
         m_bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
         if(m_bluetoothAdapter == null) {
-            Toast("this device doesn't support bluetooth")
+            Toast.makeText(baseContext, "Device does not support Bluetooth.",
+                    Toast.LENGTH_SHORT).show()
             return
         }
         if(!m_bluetoothAdapter!!.isEnabled) {
@@ -38,10 +43,30 @@ class Profile : AppCompatActivity() {
             startActivityForResult(enableBluetoothIntent, REQUEST_ENABLE_BLUETOOTH)
         }
 
-        addDevice.setOnClickListener{ pairedDeviceList() }
+        //addDevice.setOnClickListener{ pairedDeviceList() }
+
+    }
+    override fun onClick(v: View){
+        when (v.id) {
+            R.id.docLink -> showDoc()
+            R.id.editProfile -> editProfile()
+
+
+            R.id.addDevice -> pairedDeviceList()
+        }
+
 
     }
 
+    private fun pairedDeviceList() {
+        //TODO("Not yet implemented")
+    }
 
+    private fun editProfile() {
+        //TODO("Not yet implemented")
+    }
+
+    private fun showDoc() {
+        //TODO("Not yet implemented")
     }
 }
